@@ -11,40 +11,15 @@ export type User = {
 };
 
 export interface ClientToServerEvents {
-  userConnected: {
-    username: string;
-    userId: string;
-  };
-  typing: {
-    userId: string;
-    username: string;
-  };
-  stopTyping: {
-    userId: string;
-    username: string;
-  };
-  chatMessage: {
-    username: string;
-    content: string;
-  };
+  userConnected: (username: string, userId: string) => void;
+  typing: (username: string) => void;
+  stopTyping: (username: string) => void;
+  chatMessage: (content: string, username: string) => void;
 }
 
 export interface ServerToClientEvents {
-  connectedUsers: {
-    userId: string;
-    username: string;
-    ip: string;
-  }[];
-  typing: {
-    userId: string;
-    username: string;
-  };
-  stopTyping: {
-    userId: string;
-    username: string;
-  };
-  chatMessage: {
-    username: string;
-    content: string;
-  };
+  connectedUsers: (users: User[]) => void;
+  typing: (username: string) => void;
+  stopTyping: (username: string) => void;
+  chatMessage: (content: string, username: string) => void;
 }
