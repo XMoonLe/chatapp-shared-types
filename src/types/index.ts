@@ -13,12 +13,12 @@ export interface ClientToServerEvents {
   userConnected: (user: User) => void;
   typing: (username: string) => void;
   stopTyping: (username: string) => void;
-  chatMessage: (content: string, username: string) => void;
+  chatMessage: (message: Message) => void;
 }
 
 export interface ServerToClientEvents {
   connectedUsers: (users: User[]) => void;
   typing: (username: string) => void;
   stopTyping: (username: string) => void;
-  chatMessage: (content: string, username: string) => void;
+  chatMessage: (message: Message) => void;
 }
