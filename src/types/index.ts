@@ -7,11 +7,10 @@ export type Message = {
 export type User = {
   userId: string;
   username: string;
-  isTyping: boolean;
 };
 
 export interface ClientToServerEvents {
-  userConnected: (username: string, userId: string) => void;
+  userConnected: (user: User) => void;
   typing: (username: string) => void;
   stopTyping: (username: string) => void;
   chatMessage: (content: string, username: string) => void;
