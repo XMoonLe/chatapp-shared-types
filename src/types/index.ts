@@ -1,4 +1,6 @@
 export type Message = {
+  withImage?: boolean;
+  imageUrl?: string;
   userId: string;
   username: string;
   content: string;
