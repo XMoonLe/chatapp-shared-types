@@ -1,6 +1,10 @@
 export type Message = {
-  withImage?: boolean;
-  imageUrl?: string;
+  withImage: boolean;
+  image: {
+    url: string;
+    height: number;
+    width: number;
+  };
   userId: string;
   username: string;
   content: string;
