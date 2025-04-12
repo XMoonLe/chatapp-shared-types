@@ -20,6 +20,8 @@ export interface ClientToServerEvents {
   typing: (username: string) => void;
   stopTyping: (username: string) => void;
   chatMessage: (message: Message) => void;
+  "chat:sending-image": (username: string) => void;
+  "chat:image-sended": (username: string) => void;
 }
 
 export interface ServerToClientEvents {
@@ -27,4 +29,6 @@ export interface ServerToClientEvents {
   typing: (username: string) => void;
   stopTyping: (username: string) => void;
   chatMessage: (message: Message) => void;
+  "chat:sending-image": (username: string) => void;
+  "chat:image-sended": (username: string) => void;
 }
