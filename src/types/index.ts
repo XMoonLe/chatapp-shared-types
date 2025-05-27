@@ -33,6 +33,8 @@ export interface ClientToServerEvents {
   chatMessage: (message: Message) => void;
   "chat:sending-image": (username: string) => void;
   "chat:image-sended": (username: string) => void;
+  "chat:recording-audio": (username: string) => void;
+  "chat:stop-recording-audio": (username: string) => void;
 }
 
 export interface ServerToClientEvents {
@@ -43,4 +45,6 @@ export interface ServerToClientEvents {
   "chat:sending-image": (username: string) => void;
   "chat:image-sended": (username: string) => void;
   "audio:available": (data: AudioData) => void;
+  "chat:recording-audio": (username: string) => void;
+  "chat:stop-recording-audio": (username: string) => void;
 }
